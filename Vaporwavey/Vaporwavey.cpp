@@ -198,6 +198,12 @@ DWORD WINAPI ThreadProc(LPVOID lpParameter)
 
 int main()
 {
+	SetConsoleTitle(L"Vaporwavey");
+	HWND console = GetConsoleWindow();
+	RECT rect;
+	GetWindowRect(console, &rect);
+	MoveWindow(console, rect.left, rect.top, 400, 200, TRUE);
+
 	std::cout << "Vaporwavey" << std::endl;
 	std::cout << "Made by @Jamezrin" << std::endl;
 	std::cout << "Press the F8 key to toggle status" << std::endl;
